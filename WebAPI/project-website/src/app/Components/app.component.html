@@ -1,0 +1,126 @@
+ <!-- Mobile menu, hidden by default -->
+<div id="burger-menu-nav" class="burger-menu-nav" [ngClass]="{'opacity-shown': burgerActive, 'opacity-hidden': !burgerActive}">
+  <div class="row align-content-center burger-menu-content-container">
+    <div class="col justify-content-center align-items-center">
+      <!-- Title -->
+      <div (click)="Home_nav();" class="row cursor justify-content-center burger-item-container">
+        <fa-icon class="burger-item-icon" [icon]="appService.faHome" size="2x"></fa-icon>
+        <span class="burger-item">Home</span>
+      </div>
+      <div (click)="HRA_nav();" class="row cursor justify-content-center burger-item-container">
+        <fa-icon class="burger-item-icon" [icon]="appService.faUserMd" size="2x"></fa-icon>
+        <span class="burger-item">High Risk Analysis</span>
+      </div>
+      <div (click)="Results_nav();" class="row cursor justify-content-center burger-item-container">
+        <fa-icon class="burger-item-icon" [icon]="appService.faChartPie" size="2x"></fa-icon>
+        <span class="burger-item">Results</span>
+      </div>
+      <div (click)="About_nav();" class="row cursor justify-content-center burger-item-container">
+        <fa-icon class="burger-item-icon" [icon]="appService.faTerminal" size="2x"></fa-icon>
+        <span class="burger-item">About</span>
+      </div>   
+    </div>
+  </div>
+</div>
+<div class="overlay" [ngClass]="{'overlay-hidden': burgerActive}">
+  <!-- Desktop Nav Bar-->
+  <div class="row nav-container" *ngIf="this.showNav()">
+    <div class="col-1 d-flex justify-content-center align-items-center logo-container-container" style="padding-right:0;">
+      <div class="logo-container d-flex justify-content-center align-items-center">
+        <p class="logo">CoV-Risk</p>
+      </div>
+    </div>
+    <div class="col-10 nav-bar-col">
+      <div class="row nav-bar">
+        <div (click)="Home_nav();" class="col-sm-3 d-flex justify-content-center home-nav cursor hvr-underline-from-center" style="height:fit-content;">
+          <fa-icon class="home-icon" [icon]="appService.faHome" size="2x"></fa-icon>
+          <span class="header-text">Home</span>
+        </div>
+        <div (click)="HRA_nav();" class="col-sm-3 d-flex justify-content-center HRA-nav cursor hvr-underline-from-center" style="height:fit-content;">
+          <fa-icon class="" [icon]="appService.faUserMd" size="2x"></fa-icon>
+          <span class="header-text">High Risk Analysis</span>
+        </div>
+        <div (click)="Results_nav();" class="col-sm-3 d-flex justify-content-center Results-nav cursor hvr-underline-from-center" style="height:fit-content;">
+          <fa-icon class="" [icon]="appService.faChartPie" size="2x"></fa-icon>
+          <span class="header-text">Results</span>
+        </div>
+        <div (click)="About_nav();" class="col-sm-3 d-flex justify-content-center About-nav cursor hvr-underline-from-center" style="height:fit-content;">
+          <fa-icon class="" [icon]="appService.faTerminal" size="2x"></fa-icon>
+          <span class="header-text">About</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-1 d-flex justify-content-center align-items-center" *ngIf="this.showProfile()">
+      <div ngbDropdown class="">
+        <fa-icon id="dropdownMenuButton" ngbDropdownToggle class="log-out" [icon]="appService.faUser" size="2x" style="color:#005EB8; cursor:pointer;"></fa-icon>
+        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
+          <button ngbDropdownItem style="cursor:default;">User: {{this.appService.UserDetails.userName}}</button>
+          <button ngbDropdownItem style="cursor:default;">Email: {{this.appService.UserDetails.email}}</button>
+          <button ngbDropdownItem style="text-align: center;" (click)="onLogout()">Log Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Mobile Nav Bar-->
+  <div class="row mobile-nav-bar justify-content-center align-items-center" style="margin:0;" *ngIf="this.showNav()" [ngClass]="{'z-index-high': burgerActive, 'z-index-low': !burgerActive}">
+    <div [ngClass]="{'col-6': this.showProfile(), 'col-12': !this.showProfile()}">
+      <div id="hamburgerContainer" class="animate__animated animate__fadeInDown">
+        <button id="burger-menu" class="hamburger hamburger--squeeze" type="button" (click)="ToggleMobileMenu()" [ngClass]="{'is-active': burgerActive}">
+          <span class="hamburger-box">
+            <span class="hamburger-inner" [ngClass]="{'white-burger': burgerActive}"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="col-6" *ngIf="this.showProfile()">
+      <div ngbDropdown class="dropdown-custom">
+        <fa-icon id="dropdownMenuButton" ngbDropdownToggle class="log-out log-out-mobile" [icon]="appService.faUser" size="2x" [ngClass]="{'log-out-mobile-white': burgerActive}"></fa-icon>
+        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
+          <div ngbDropdownItem style="cursor:default;">User: {{this.appService.UserDetails.userName}}</div>
+          <div ngbDropdownItem style="cursor:default;">Email: {{this.appService.UserDetails.email}}</div>
+          <button ngbDropdownItem style="text-align: center;" (click)="onLogout()">Log Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Content-->
+  <div class="container" style="min-height:100vh">
+    <router-outlet></router-outlet>
+  </div>
+  <!--Footer-->
+  <footer class="footer align-items-end d-block" style="margin:0;">
+    <div class="row">
+      <div class="col-4 align-items-center footer-title-container">
+        <div class="row footer-title"><h3 class="display-4 footer-title-item" style="text-decoration: underline;">CoV-Risk</h3></div>
+      </div>
+      <div class="col-8 references-row">
+        <h4>References</h4>
+        <div class="row" style="margin:0;">
+          <div class="references">
+            <a href="https://www.vectorstock.com/royalty-free-vector/medicine-vector-30804793">Background Vector image by VectorStock / Roman1</a>
+          </div>
+        </div>
+        <div class="row" style="margin:0;">
+          <div class="references">
+            <a href="https://www.vectorstock.com/royalty-free-vector/web-statistics-analytic-charts-on-computer-screen-vector-31771340">HRA Download Vector image by VectorStock / vectorstock</a>
+          </div>
+        </div>
+        <div class="row" style="margin:0;">
+          <div class="references">
+            <a href="https://www.vectorstock.com/royalty-free-vector/corona-virus-doodle-seamless-pattern-header-eps-vector-30357380">About 'Overview' Vector image by VectorStock / Valeriya_Dor</a>
+          </div>
+        </div>
+        <div class="row" style="margin:0;">
+          <div class="references">
+            <a href="https://www.vectorstock.com/royalty-free-vector/document-and-notebook-outline-icon-isolated-vector-20728518">About 'How To Guides' Vector image by VectorStock / vectorstock</a>
+          </div>
+        </div>
+        <div class="row" style="margin:0;">
+          <div class="references">
+            <a href="https://www.vectorstock.com/royalty-free-vector/flat-design-modern-icons-set-website-seo-vector-29940689">About 'Development' Vector image by VectorStock / Robot</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

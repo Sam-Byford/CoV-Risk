@@ -1,0 +1,55 @@
+<h3 style="text-align:center">Patient: {{this.patient.id}}</h3>
+<mat-dialog-content>
+  <div class="row" style="text-align:center">
+    <h5 style="margin-top:1rem; margin-bottom:1rem;">More Patient Information</h5>
+  </div>
+  <div class="row">
+    <span>Phone Number: {{patient.phoneNumber ? patient.phoneNumber : '--'}}</span>
+  </div>
+  <div class="row">
+    <span>Uploaded On: {{this.patient.uploaded | date:'dd/MM/yyyy'}}</span>
+  </div>
+  <div class="row">
+    <span>Modified On: {{patient.modified ? (patient.modified | date:'dd/MM/yyyy') : '--'}}</span>
+  </div>
+  <div class="row" style="">
+    <h5 style="margin-top:1rem; margin-bottom:1rem;">Edit Patient Information</h5>
+  </div>
+  <form #form='ngForm' class="mb-2" autocomplete="off">
+    <div class="form-group">
+      <label>Age</label>
+      <input type="number" [min]="0" [max]="120" class="form-control" #age="ngModel" name="age" [(ngModel)]="this.patient.age" required />
+    </div>
+    <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
+      <div *ngIf="age.errors?.required">
+        Age is required.
+      </div>
+    </div>
+    <div *ngIf="(age.dirty || age.touched) && !AgeValidation()" class="alert alert-danger">
+      <div>
+        Age should be in the range 0-120.
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="w-100">
+        Preconditions
+        <fa-icon [matTooltipHideDelay]="5000" [matTooltipTouchGestures]="'on'" matTooltipClass="custom-tooltip" matTooltip="Acceptable values: 'COPD', 'pneumonia', 'renal_chronic', 'diabetes', 'hypertension', 'obesity' or 'immunosuppressed'. Can be left blank"
+                style="color: #005EB8; cursor:pointer;" [icon]="appService.faInfoCircle"></fa-icon>
+      </label>
+      <input class="form-control" #preconditions="ngModel" name="preconditions" [(ngModel)]="this.preconditionStr" required />
+    </div>
+    <div class="form-group">
+      <label class="w-100">
+        Phone Number
+        <fa-icon  [matTooltipHideDelay]="2000" [matTooltipTouchGestures]="'on'" matTooltip="Valid mobile number with country code. Can be left blank" matTooltipClass="custom-tooltip"
+                 style="color: #005EB8; cursor:pointer;" [icon]="appService.faInfoCircle"></fa-icon>
+      </label>
+      <input class="form-control" #phoneNumber="ngModel" name="phoneNumber" [(ngModel)]="this.patient.phoneNumber" required />
+    </div>
+  </form>
+  <mat-checkbox class="example-margin" style="margin-top:0.5rem" [(ngModel)]="this.message">Message patient if they are now high risk</mat-checkbox>
+</mat-dialog-content>
+<div mat-dialog-actions class="float-right">
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button (click)="onConfirmClick()" [disabled]="age.invalid || !AgeValidation()">Confirm</button>
+</div>

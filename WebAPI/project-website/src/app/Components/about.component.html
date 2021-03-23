@@ -1,0 +1,223 @@
+<div class="container">
+  <div class="row page-title">
+    <div class="col d-flex justify-content-center">
+      <h1 class="display-3">About</h1>
+    </div>
+  </div>
+  <div class="row contents-row">
+    <div class="col">
+      <h2 class="contents-subtitle">Contents</h2>
+      <ul class="contents-list">
+        <li><span class="link" (click)="scrollToOverview()">Overview</span></li>
+        <li>
+          <span class="link" (click)="scrollToHowTo()">How To Guides</span>
+            <ol class="sublist">
+              <li><span class="link" (click)="scrollToUpload()">Creating And Uploading A File</span></li>
+              <li><span class="link" (click)="scrollToResults()">Accessing Results</span></li>
+              <li><span class="link" (click)="scrollToLogging()">Logging Out</span></li>
+            </ol>
+        </li>
+        <li>
+          <span class="link" (click)="scrollToDevelopment()">Development</span>
+          <ol class="sublist">
+            <li><span class="link" (click)="scrollToDescription()">Dataset Description</span></li>
+            <li><span class="link" (click)="scrollToPreProcessing()">Data Pre-processing</span></li>
+            <li><span class="link" (click)="scrollToAnalysis()">Data Analysis</span></li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div #overview class="about-section" style="margin-top:1%;">
+    <div class="row header-row">
+      <div class="img-1">
+        <div class="row overlay align-items-center">
+          <h1 id="overview" class="display-5 subtitles">Overview</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row text-row">
+      <div class="col">
+        <p>CoV-Risk has been designed to help manage the task of vaccinating the worlds 7 billion population, one of the largest logistical challenges ever faced by the global community.</p>
+        <p>Current strategies implemented by governments include splitting people based on two main factors – age and any pre-existing health conditions. Most pre-existing conditions are treated equally. This is not a very effective solution as it leads to situations where younger patients with serious conditions would receive the vaccination at the same time as, if not later than, older, healthier patients. </p>
+        <p>Therefore, the CoV-Risk algorithm was created to ensure a more balanced and fairer prioritisation. The algorithm dives further into patient history, instead of simply stating that patients with pre-existing health conditions should be prioritised, the algorithm compares the conditions based on how severely COVID-19 reacts with them. Patients with certain conditions such as Diabetes are prioritised over other patients with conditions such as COPD. Age is still a factor, but it is no longer the focus. This ensures a system that is based on a more patient by patient approach, if you are extremely vulnerable to severe COVID-19 you will get the vaccination first, regardless of your age.</p>
+        <p>CoV-Risk allows medical professionals to take advantage of this algorithm by providing a simple and clean interface. All users need to do is upload a patient data file and the tool will automatically calculate and contact high risk individuals. It is easy and clear to see who should be prioritised with the generated patient risk score. This risk score is a metric that signifies how likely each patient is to have severe COVID-19 by assigning different point values to different conditions (each condition's point value can be seen at the bottom of this page). The higher the score, the higher the risk. The results generated from user uploads are then analysed to provide a summation of the data in an easy-to-understand graphical format.</p>
+      </div>
+    </div>
+  </div>
+
+  <div #howTo class="about-section">
+    <div class="row header-row">
+      <div class="img-2">
+        <div class="row overlay align-items-center">
+          <h1 class="display-5 subtitles">How To Guides</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row text-row howTo">
+      <div class="col">
+        <p>To access the features of CoV-Risk you must first <span (click)="Login_Nav()" style="cursor:pointer; text-decoration:underline;">login</span>.</p>
+        <div class="row guide" #upload style="margin:0;">
+          <h3 class="subheading-custom" id="upload">Creating And Uploading A File</h3>
+          <ol class="main-list">
+            <li>To upload a file to the algorithm first click on the <span (click)="HRA_Nav()" style="cursor:pointer; text-decoration:underline;">High Risk Analysis</span> tab</li>
+            <li>
+              When loaded you will be greeted with a brief explanation of the algorithm and what it does. Click on the ‘Click here’ text to open the template box.
+              <div class="row image-row"><img class="image-size" src="../assets/Guides/HRA1.png" /></div>
+            </li>
+            <li>The template box explains what values are acceptable in each of the file’s columns. Once you have read this information, click the ‘Download Template’ button.</li>
+            <li>
+              Open the file and you will see the template, and guide, for creating the appropriate patient data file. Read over this information to understand how to correctly format the data.
+              <ul>
+                <li>The first row is the column headings, showing which information should go in which column</li>
+                <li>The second row is the column descriptors. They provide a description of each column and the format the data should be entered in</li>
+                <li>Rows 4-6 provide 3 examples of patients. Note how the preconditions and phone number columns can be left blank.</li>
+              </ul>
+              <div class="row image-row"><img class="image-size-2" src="../assets/Guides/Template.PNG" /></div>
+            </li>
+            <li>Enter your patient information into rows 7 and onwards</li>
+            <li>
+              Delete rows 2-6 to be left with a file that only contains the column headings in row 1 and your inserted patient information in subsequent rows.
+              <ul>
+                <li>
+                  If you are using Excel, press ctrl and left click row numbers 2-6
+                </li>
+                <li>
+                  Right click and press 'Delete'
+                </li>
+              </ul>
+              <div class="row image-row"><img class="image-size-8" src="../assets/Guides/Template3.PNG" /></div>
+            </li>
+            <li>
+              Save the file. Your file should now look similar to the one seen in the image below.
+              <div class="row image-row"><img class="image-size-3" src="../assets/Guides/Templat2.PNG" /></div>
+            </li>
+            <li>Click the ‘Upload file’ button and select the file you just saved</li>
+            <li>
+              A pop-up will then appear asking if you would like to message high risk patients. Allowing this option texts patients who are calculated as high risk if their phone number has been provided. Chose to enable the option or not.
+              <div class="row image-row"><img class="image-size-5" src="../assets/Guides/HRA2.png" /></div>
+            </li>
+            <li>The file will now be uploaded and the results from the upload will be viewable in a table below.</li>
+          </ol>
+        </div>
+
+        <div class="row guide" #results style="margin:0;">
+          <h3 class="subheading-custom" style="width:100%;">Accessing Results</h3>
+          <ol class="main-list">
+            <li>Once the file has successfully uploaded you can view the results by clicking on the <span (click)="Results_Nav()" style="cursor:pointer; text-decoration:underline;">Results</span> tab</li>
+            <li>The patients can then be viewed in the results table, high risk patients appear in red.</li>
+            <li>
+              More information on the patient can be found by clicking the
+              '<fa-icon style="color: white;" [icon]="appService.faInfoCircle" size="1x"></fa-icon>'
+              symbol in that patient’s respective 'More' column. This is also where the patient's information can be updated.
+              <ul>
+                <li>The phone number, age and preconditions of the patient can all be modified</li>
+                <li>You can also choose whether to message the patient or not if they are calculated as high risk after any changes</li>
+              </ul>
+              <div class="row image-row"><img class="image-size-4" src="../assets/Guides/results1.PNG" /></div>
+            </li>
+            <li>
+              A patient can be deleted by clicking the checkbox in that patient’s ‘Select’ row and then clicking ‘Delete Selected’
+              <div class="row image-row"><img class="image-size" src="../assets/Guides/results2.PNG" /></div>
+            </li>
+            <li>
+              There is a text filter above the table that allows you to filter the results in any of the columns
+              <ul>
+                <li>For example, you could type a number to show all patients at that age/risk score or you could type ‘TRUE’ to show all users who are high risk</li>
+              </ul>
+            </li>
+            <li>At the bottom of the table are the page buttons. The table is set to display 8 patients per page, clicking the buttons will cycle through each page.</li>
+            <li>
+              The table can also be sorted based on column values by clicking the column headers. By default, the table is organised by age ascending
+              <ul>
+                <li>
+                  For example, to change the sort order to show high risk ascending you would click on the ‘Risk Score’ heading. Click it again to show descending and a final time to revert to default sort
+                  <div class="row image-row"><img class="image-size" src="../assets/Guides/results3.PNG" /></div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              Beneath the results table is the analysis section which provides a visual guide to the results. Click the ‘Show More’ text to show more graphs.
+              <ul>
+                <li>
+                  Click the ‘Show Less’ text to hide the additional graphs.
+                  <div class="row image-row"><img class="image-size" src="../assets/Guides/results4.PNG" /></div>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="row guide" #logging style="margin:0;">
+          <h3 class="subheading-custom" style="width:100%;">Logging Out</h3>
+          <ol class="main-list" style="width:100%;">
+            <li>
+              Click the user profile button in the top right of the page to display your user profile
+              <div class="row image-row" style="margin:0"><img class="image-size-6" src="../assets/Guides/tempsnip.png" /></div>
+            </li>
+            <li>Click ‘Log Out’ to log out of the application. </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div #development class="about-section" style="margin-bottom:6%;">
+    <div class="row header-row">
+      <div class="img-3">
+        <div class="row overlay align-items-center">
+          <h1 class="display-5 subtitles">Development Of Application</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row text-row dev">
+      <div class="col">
+        <div class="row dev-section" #data>
+          <h3 class="subheading-custom">Dataset Description</h3>
+          <p>
+            To create the points-based algorithm, analysis first had to be carried out on which conditions were affected the most by COVID-19. To do this I used the COVID-19 patient pre-condition dataset supplied by the Mexican government that can be found <a style="color:white; text-decoration:underline;" href="https://www.kaggle.com/tanmoyx/covid19-patient-precondition-dataset" target="_blank">here</a>. Due to data-protection laws finding information about patient pre-conditions and COVID-19 severity was extremely hard. This dataset was by far the most complete & accurate and was in an ideal format for the application needs.
+            The dataset contained the anonymised medical information of 566,000 patients. There was information regarding each patient’s age, sex, if they had COVID-19, the date they died, if they were placed in ICU or intubated and if they had a one of the large array of preconditions listed.
+          </p>
+          <p>The data in the file took the form of binary classes for most of the fields bar age, ID and dates. For example, if a patient had a certain precondition the value for that column would be ‘1’, if they did not it would be ‘2’. The value ‘97’ was used to signify data that was not applicable (such as a male being pregnant), ‘98’ was data that was ignored and ‘99’ was data that was unknown. For simplicity I replaced the ‘1’, ‘2’ values with ‘1’, ‘0’. With ‘1’ representing true (the patient has the precondition) and ‘0’ representing false (the patient does not have the precondition). For the sex column ‘1’ was for females and ‘0’ was for males.</p>
+          <div class="row image-row" style="margin:0"><img class="image-size-2" src="../assets/mex.PNG" /></div>
+        </div>
+
+        <div class="row dev-section" #processing>
+          <h3 class="subheading-custom">Data Pre-processing</h3>
+          <p>Before the analysis, the file first had to be ‘cleaned’ to make it usable and remove any inconsistencies. All of the data cleaning and analysis was performed using the statistical programming language 'R'.</p>
+          <p>The first step was to remove all patients who had not received a positive COVID-19 test, this reduced the dataset to be purely COVID-19 patients only. The ‘date_died’ column was replaced with a simple true or false, ‘died’ column.</p>
+          <p>To decide if a patient had severe COVID-19 a separate column was added called ‘severe_cov’. This column was set to true if one of three conditions were met; the patient had died, they were placed in ICU or they were intubated. </p>
+          <p>Erroneous data was removed from the file such as patients less than 10 marked as pregnant or multiple people older than 115.</p>
+          <p>The value ‘97’ was then set to 0 in every column, this is because the column represented 'not applicable' and therefore by inference it represented false (males cannot be pregnant).</p>
+          <p>The dataset was then cleaned one final time by removing all patients who had incomplete information, e.g., patients who had a field value set to either 99 or 98. This was to help improve the accuracy by only analysing complete data.</p>
+          <div class="row image-row" style="margin:0"><img class="image-size-7" src="../assets/R1.PNG" /></div>
+        </div>
+
+        <div class="row dev-section" #analysis>
+          <h3 class="subheading-custom">Data Analysis</h3>
+          <p>The dataset was split 70/30 into a train and a test set. The training set would be used to train a prediction model and the test set would be used to calculate its performance. The prediction model was used to predict which patients would have severe COVID and which would not and more importantly which of the patient’s factors were the most important in determining this prediction.</p>
+          <p>The prediction model chosen was a logistic regression model, this form of data examination is perfect for classifying data (e.g. does a patient belong in a high or low risk category). Logistic regression returns coefficients which show how significant each factor (pre-condition) is in causing severe COVID-19. LASSO was then performed to set the least significant factors to zero, reducing noise and leaving only the important factors.</p>
+          <p>Conditions marked as non-significant were pregnancy, asthma, cardiovascular disease, and smoking. The fact that these conditions were non-significant was unexpected as other studies have shown them to be factors in COVID-19 severity. It is most likely due to errors and inconsistencies in the dataset.</p>
+          <p>Significant coefficient values were then converted into an easier and more readable point system. This final point system can be seen below:</p>
+          <div class="row tableRowCustom">
+            <div class="mat-elevation-z2 aboutTableContainer">
+              <table mat-table [dataSource]="AboutDataSource" class="deleteTable">
+                <ng-container matColumnDef="precondition">
+                  <th mat-header-cell *matHeaderCellDef class="table-head"> Precondition </th>
+                  <td mat-cell *matCellDef="let precondition"> {{precondition.condition}} </td>
+                </ng-container>
+                <ng-container matColumnDef="points">
+                  <th mat-header-cell *matHeaderCellDef class="table-head"> Points </th>
+                  <td mat-cell *matCellDef="let precondition"> {{precondition.points}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+              </table>
+            </div>
+          </div>
+          <p>The accuracy of the algorithm was 87%, meaning 87% of the time patients were correctly classified as having severe COVID-19. This is a much higher value than expected and well within an acceptable range.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

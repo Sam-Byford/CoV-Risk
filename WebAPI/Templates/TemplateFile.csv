@@ -1,0 +1,6 @@
+Id,Sex,Age,Preconditions,Phone Number
+<Unique Patient ID>,<Sex Of Patient>,<Age Of Patient>,"<Any Preconditions the Patient has. Must be written in the format - ""Condition1; Condition2; Condition3"" etc>","<Mobile number of patient written in the format - ""country Code_phone number"" where ""_"" represents a space. Note: If using excel an apostrophe ' must be added before the + symbol >"
+,,,,
+example01,M,22,,+44 07850823427
+example02,F,56,COPD; OBESITY; HYPERTENSION,
+example03,M,72,DIABETES,+44 12345678912

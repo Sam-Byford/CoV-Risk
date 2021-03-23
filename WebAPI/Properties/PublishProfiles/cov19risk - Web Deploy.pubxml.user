@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAslarWVq86kiCuBS5sf1P0gAAAAACAAAAAAAQZgAAAAEAACAAAAC7xyzaRh/QgZ7F5lVk9X44rlUaCh76ZOn6i6uAielE8wAAAAAOgAAAAAIAACAAAABVDxMPogXizX0FXradosEYsn3Rxecn1i0ZEKp1EuhPSIAAAAD3xIBUBCOE0vUexAHfPR7iScXY6uae+NJsVO9gHD2M3Xm7FstiwiYXChVYVIXlSn3HD43F0Fn9AtzNct1hL9AfeH8oP4PSO70why3QVmnTAOJf7D2oQ8oq/Dp+zGCmnpdMnKrhp/SuezRururXDSdtyW/Y9I/lm3hAIHoArT6BHEAAAAD18vysjjYT9ZNJqnAVyn4DuKDYDirHnPMDGeeF2bm8tyY9Gu3okzs32W90Lbfb1WjNdkUHd2lzoOMHSRGtI19E</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DissertationLiveDB">
+      <Value>Server=tcp:samby-sql.database.windows.net,1433%3bInitial Catalog=dissertation-db%3bPersist Security Info=False%3bUser ID=samBy%3bPassword=:qvH7XEWZ4NzADLs%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,70 @@
+<div class="container" style="height:100vh">
+  <!--Desktop-->
+  <div class="row align-content-center desktopContainer safariCenter">
+    <div class="col-md-6 d-flex align-items-center justify-content-center ">
+      <!-- Title -->
+      <div class="index-title-container-log desktopCol">
+        <h1 class="display-1 index-title-log">CoV-Risk</h1>
+        <div class="d-flex justify-content-center">
+          <div class="home-text">
+            Welcome to CoV-Risk, the online tool that allows for the risk assessment and prioritisation of patients in regards to getting a COVID-19 Vaccination.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 login-container desktopCol">
+      <h1 class="login-title">Sign In</h1>
+      <form #form='ngForm' class="mb-2" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="form-group">
+          <label>Username</label>
+          <input class="form-control" #UserName="ngModel" name="UserName" [(ngModel)]="formModel.UserName" required />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" #Password="ngModel" name="Password" [(ngModel)]="formModel.Password" required />
+        </div>
+        <div class="form-row" [ngClass]="{'spinner-shown': !this.loading, 'spinner-hidden': this.loading}" style="margin-top:5%;">
+          <div class="form-group col-md-8 offset-md-2">
+            <button type="submit" class="btn btn-lg btn-block" [disabled]="form.invalid">Login</button>
+          </div>
+        </div>
+        <div class="form-row" style="margin-top:5%;" [ngClass]="{'spinner-shown': this.loading, 'spinner-hidden': !this.loading}">
+          <div class="form-group col" style="display:flex; justify-content:center; align-items:center;">
+            <mat-spinner id="loading-spinner"  [strokeWidth]=5 [diameter]=60></mat-spinner>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--Mobile-->
+  <div class="row mobileRow mobile-Title-Row">
+    <div class="col">
+      <h6 class="mobile-Title display-3">CoV-Risk</h6>
+    </div>
+  </div>
+  <div class="row mobileRow" style="margin-top:15%;">
+    <div class="col login-container-mobile">
+      <h1 class="login-title">Sign In</h1>
+      <form #form='ngForm' class="mb-2" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="form-group">
+          <label>Username</label>
+          <input class="form-control" #UserName="ngModel" name="UserName" [(ngModel)]="formModel.UserName" required />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" #Password="ngModel" name="Password" [(ngModel)]="formModel.Password" required />
+        </div>
+        <div class="form-row" style="margin-top:5%;" [ngClass]="{'spinner-shown': !this.loading, 'spinner-hidden': this.loading}">
+          <div class="form-group col-md-8 offset-md-2">
+            <button type="submit" class="btn btn-lg btn-block" [disabled]="form.invalid">Login</button>
+          </div>
+        </div>
+        <div class="form-row" style="margin-top:5%;" [ngClass]="{'spinner-shown': this.loading, 'spinner-hidden': !this.loading}">
+          <div class="form-group col" style="display:flex; justify-content:center; align-items:center;">
+            <mat-spinner id="loading-spinner"  [strokeWidth]=5 [diameter]=60></mat-spinner>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

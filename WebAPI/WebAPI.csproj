@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TypeScriptToolsVersion>4.0</TypeScriptToolsVersion>
+    <UserSecretsId>ec776c43-a859-47f9-b33a-81c1c7c3abff</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="project-website\src\app\about.component.ts" />
+    <None Remove="project-website\src\app\auth.guard.ts" />
+    <None Remove="project-website\src\app\auth.interceptor.ts" />
+    <None Remove="project-website\src\app\DeleteDiag.component.ts" />
+    <None Remove="project-website\src\app\home.component.ts" />
+    <None Remove="project-website\src\app\HRADiag.component.ts" />
+    <None Remove="project-website\src\app\login.component.ts" />
+    <None Remove="project-website\src\app\Models\DeleteDialogData.ts" />
+    <None Remove="project-website\src\app\Models\HRADialogData.ts" />
+    <None Remove="project-website\src\app\Models\Patient.ts" />
+    <None Remove="project-website\src\app\Models\PatientResponse.ts" />
+    <None Remove="project-website\src\app\pageNotFound.component.ts" />
+    <None Remove="project-website\src\app\styles\EditDiag.component.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="project-website\src\app\styles\EditDiag.component.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Twilio" Version="5.54.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="project-website\src\app\Components\about.component.ts" />
+    <TypeScriptCompile Include="project-website\src\app\Routing\auth.guard.ts" />
+    <TypeScriptCompile Include="project-website\src\app\Routing\auth.interceptor.ts" />
+    <TypeScriptCompile Include="project-website\src\app\Dialogs\DeleteDiag.component.ts" />
+    <TypeScriptCompile Include="project-website\src\app\Dialogs\HRADiag.component.ts" />
+    <TypeScriptCompile Include="project-website\src\app\Components\login.component.ts" />
+    <TypeScriptCompile Include="project-website\src\app\Models\DeleteDialogData.ts" />
+    <TypeScriptCompile Include="project-website\src\app\Models\HRADialogData.ts" />
+    <TypeScriptCompile Include="project-website\src\app\Components\pageNotFound.component.ts" />
+    <TypeScriptCompile Include="project-website\src\app\Components\registration.component.ts" />
+    <TypeScriptCompile Include="project-website\src\app\Components\home.component.ts" />
+    <TypeScriptCompile Include="project-website\src\app\Models\Patient.ts" />
+    <TypeScriptCompile Include="project-website\src\app\Models\PatientResponse.ts" />
+    <TypeScriptCompile Include="project-website\src\app\Components\user.component.ts" />
+  </ItemGroup>
+
+</Project>

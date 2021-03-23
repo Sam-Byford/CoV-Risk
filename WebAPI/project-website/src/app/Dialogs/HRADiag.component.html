@@ -1,0 +1,7 @@
+<h5 style="text-align:center">Confirm File Upload</h5>
+<p style="margin-top:1rem;"><strong style="font-weight:600">File:</strong> {{this.fileName}}</p>
+<mat-checkbox class="example-margin" [(ngModel)]= "this.message">Message High Risk Patients</mat-checkbox>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button (click)="onConfirmClick()" [mat-dialog-close]="this.response" cdkFocusInitial>Confirm</button>
+</div>

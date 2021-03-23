@@ -1,0 +1,69 @@
+<div class="container" style="height:100vh;">
+  <!--Desktop-->
+  <div class="row align-content-center desktopContainer safariCenter">
+    <div class="col-7 title-col d-flex justify-content-center align-items-center">
+      <!-- Title -->
+      <div class="index-title-container desktopCol">
+        <h1 class="display-1 index-title" style="letter-spacing:10px; text-align:center; width:fit-content;">CoV-Risk</h1>
+        <div class="d-flex justify-content-center">
+          <div class="home-text">
+            Welcome to CoV-Risk, the online tool that allows for the risk assessment and prioritisation of patients in regards to getting a COVID-19 Vaccination.
+            <span (click)="About_nav()" style="cursor:pointer; text-decoration:underline; color:#007bff;">Find out more</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-5 sign-btns-col desktopCol">
+      <h1 class="login-btn-title">Get Started</h1>
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <button id="signIn" class="sign-btns btn btn-large btn-primary" routerLink="/login" routerLinkActive="active">Sign In</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <button id="signUp" class="sign-btns btn btn-large btn-primary" routerLink="/Registration" routerLinkActive="active">Register</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col d-flex justify-content-center" style="position:absolute; bottom:0;">
+          <p>Website Developed By <a href="https://sambyford.com/" target="_blank">Sam Byford</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Mobile-->
+  <div class="row mobileRow mobile-Title-Row">
+    <div class="col">
+      <h6 class="mobile-Title display-3">CoV-Risk</h6>
+    </div>
+  </div>
+  <div class="row mobileRow">
+    <div class="col">
+      <div class="mobile-text">
+        Welcome to CoV-Risk, the online tool that allows for the risk assessment and prioritisation of patients in regards to getting a COVID-19 Vaccination.
+        <span (click)="About_nav()" style="cursor:pointer; text-decoration:underline; color:#007bff;">Find out more</span>
+      </div>
+    </div>
+  </div>
+  <div class="row mobileRow" style="margin-top:10%;">
+    <div class="col sign-btns-col-mobile">
+      <h1 class="login-btn-title-mobile">Get Started</h1>
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <button id="signInMobile" class="sign-btns btn btn-large btn-primary" routerLink="/login" routerLinkActive="active">Sign In</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <button id="signUp" class="sign-btns btn btn-large btn-primary" routerLink="/Registration" routerLinkActive="active">Register</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col d-flex justify-content-center" style="position:absolute; bottom:0;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,117 @@
+.graph1-graph {
+  background-color: #005EB8;
+  color: white;
+  height: 200px;
+}
+
+.graph2-graph {
+  background-color: #005EB8;
+  color: white;
+  height: 200px;
+}
+
+.resultsTable {
+  width: inherit;
+  overflow:auto;
+}
+
+.paginator {
+  margin-bottom: 3%;
+}
+
+.spinner-container {
+  position: relative;
+}
+
+.spinner-hidden {
+  display: none;
+}
+
+spinner-shown {
+  display: block;
+}
+
+#loading-spinner {
+  margin-top: 10%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.highRisk {
+  background-color: red;
+}
+
+.lowRisk {
+  background-color: white;
+}
+
+.pieChart {
+  height: 275px;
+  width: 550px;
+}
+
+.chart {
+  padding-bottom: 1%;
+  padding-top: 1%;
+}
+
+.chartDescription {
+  color: white;
+  padding-top: 1%;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: larger;
+  letter-spacing: 1px;
+}
+
+  .separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+  }
+
+  .separator::before {
+    margin-right: .25em;
+  }
+
+  .separator::after {
+    margin-left: .25em;
+  }
+
+.description-row {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.deleteBtn {
+  background-color: #005EB8;
+}
+
+@media screen and (max-width: 992px) {
+  .chart {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .chart {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+  .pieChart-container{
+    display:none;
+  }
+  .mat-paginator-range-label{
+    font-size:small!important;
+  }
+}

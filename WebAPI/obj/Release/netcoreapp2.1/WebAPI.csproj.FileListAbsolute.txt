@@ -1,0 +1,15 @@
+C:\Users\samby\project-website-full-stack\WebAPI\WebAPI\bin\Release\netcoreapp2.1\WebAPI.deps.json
+C:\Users\samby\project-website-full-stack\WebAPI\WebAPI\bin\Release\netcoreapp2.1\WebAPI.runtimeconfig.json
+C:\Users\samby\project-website-full-stack\WebAPI\WebAPI\bin\Release\netcoreapp2.1\WebAPI.runtimeconfig.dev.json
+C:\Users\samby\project-website-full-stack\WebAPI\WebAPI\bin\Release\netcoreapp2.1\WebAPI.dll
+C:\Users\samby\project-website-full-stack\WebAPI\WebAPI\bin\Release\netcoreapp2.1\WebAPI.pdb
+C:\Users\samby\project-website-full-stack\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.csprojAssemblyReference.cache
+C:\Users\samby\project-website-full-stack\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\samby\project-website-full-stack\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.RazorAssemblyInfo.cache
+C:\Users\samby\project-website-full-stack\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.RazorAssemblyInfo.cs
+C:\Users\samby\project-website-full-stack\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.AssemblyInfoInputs.cache
+C:\Users\samby\project-website-full-stack\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.AssemblyInfo.cs
+C:\Users\samby\project-website-full-stack\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\samby\project-website-full-stack\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.dll
+C:\Users\samby\project-website-full-stack\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.pdb
+C:\Users\samby\project-website-full-stack\WebAPI\WebAPI\obj\Release\netcoreapp2.1\UserSecretsAssemblyInfo.cs

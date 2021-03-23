@@ -1,0 +1,103 @@
+.container{
+  height:100vh;
+}
+
+input.form-control, input.form-control:focus {
+  background-color: white;
+  color: black;
+  border-color: lightgrey;
+  border-radius: 8px;
+  border-width: 1px;
+}
+
+  input.form-control:focus {
+    box-shadow: none;
+    border-bottom-color: lightgrey;
+  }
+
+button[type=submit].btn {
+  border-radius: 20px;
+  background-color: #005EB8;
+  color: #fff;
+}
+
+div.form-group label {
+  color: black;
+  font-weight: bold;
+}
+
+div.form-group.required > label:first-child:after {
+  content: '*';
+  color: #dc3545;
+  padding-left: 5px;
+}
+
+#toast-container > div {
+  opacity: 1;
+}
+
+form {
+  margin: 0px 16px;
+}
+
+.registration-container {
+  padding: 3% 2% 2% 2%;
+  background-color: #f4f9f9;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.register-title {
+  margin-bottom: 2%;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.index-title-reg {
+  border-bottom: 5px solid #005EB8;
+  line-height: 1.0;
+  margin-bottom: 20px;
+}
+
+.title-col {
+}
+
+.home-text {
+  text-align: left;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 350;
+  letter-spacing: 0.5px;
+  padding-right: 10%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .index-title-reg {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .index-title-reg {
+    font-size: 3rem;
+  }
+}
+
+/*Mobile*/
+@media only screen and (max-width: 768px) {
+  .mobileRow {
+    display: block !important;
+  }
+
+  .desktopCol {
+    display: none !important;
+  }
+
+  .desktopContainer {
+    height: 0;
+  }
+
+  .container {
+    height: auto;
+  }
+}

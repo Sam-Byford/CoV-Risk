@@ -1,0 +1,130 @@
+<div class="container">
+  <!--Desktop-->
+  <div class="row align-content-center desktopContainer safariCenter">
+    <div class="col-md-6 d-flex align-items-center justify-content-center">
+      <!-- Title -->
+      <div class="index-title-container-reg desktopCol">
+        <h1 class="display-1 index-title-reg" style="letter-spacing:10px; text-align:center; width:fit-content;">CoV-Risk</h1>
+        <div class="d-flex justify-content-center">
+          <div class="home-text">
+            Welcome to CoV-Risk, the online tool that allows for the risk assessment and prioritisation of patients in regards to getting a COVID-19 Vaccination.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 registration-container desktopCol">
+      <form [formGroup]="this.appService.formModel" autocomplete="off" (submit)="onSubmit()">
+        <h1 class="register-title">Register</h1>
+        <div class="form-group required">
+          <label>Username</label>
+          <input class="form-control" formControlName="UserName" />
+          <label class="text-danger" *ngIf="this.appService.formModel.get('UserName')?.touched && this.appService.formModel.get('UserName')?.errors?.required">
+            This Feild is Mandatory
+          </label>
+        </div>
+        <div class="form-group required">
+          <label>Email</label>
+          <input class="form-control" formControlName="Email" />
+          <label class="text-danger" *ngIf="this.appService.formModel.get('Email')?.touched && this.appService.formModel.get('Email')?.errors?.required">
+            This Feild is Mandatory
+          </label>
+          <label class="text-danger" *ngIf="this.appService.formModel.get('Email')?.touched && this.appService.formModel.get('Email')?.errors?.email">
+            Please Enter A valid Email Address
+          </label>
+        </div>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input class="form-control" formControlName="FullName" />
+        </div>
+        <div formGroupName="Passwords">
+          <div class="form-group required">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="Password" />
+            <label class="text-danger" *ngIf="this.appService.formModel.get('Passwords.Password')?.touched && this.appService.formModel.get('Passwords.Password')?.errors?.required">
+              This Feild is Mandatory
+            </label>
+            <label class="text-danger" *ngIf="this.appService.formModel.get('Passwords.Password')?.touched && this.appService.formModel.get('Passwords.Password')?.errors?.minlength">
+              Passwords Must Be Greater Than Four Characters
+            </label>
+          </div>
+          <div class="form-group required">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" formControlName="ConfirmPassword" />
+            <label class="text-danger" *ngIf="this.appService.formModel.get('Passwords.ConfirmPassword')?.touched && this.appService.formModel.get('Passwords.ConfirmPassword')?.errors?.required">
+              This Feild is Mandatory
+            </label>
+            <label class="text-danger" *ngIf="this.appService.formModel.get('Passwords.ConfirmPassword')?.touched && this.appService.formModel.get('Passwords.ConfirmPassword')?.errors?.passwordMismatch">
+              Passwords Do Not Match
+            </label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-8 offset-md-2">
+            <button type="submit" class="btn btn-lg btn-block" [disabled]="!this.appService.formModel.valid">Register</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--Mobile-->
+  <div class="row mobileRow mobile-Title-Row">
+    <div class="col">
+      <h6 class="mobile-Title display-3">CoV-Risk</h6>
+    </div>
+  </div>
+  <div class="row mobileRow margin-b5 margin-t5">
+    <div class="col registration-container">
+      <form [formGroup]="this.appService.formModel" autocomplete="off" (submit)="onSubmit()">
+        <h1 class="register-title">Register</h1>
+        <div class="form-group required">
+          <label>Username</label>
+          <input class="form-control" formControlName="UserName" />
+          <label class="text-danger" *ngIf="this.appService.formModel.get('UserName')?.touched && this.appService.formModel.get('UserName')?.errors?.required">
+            This Feild is Mandatory
+          </label>
+        </div>
+        <div class="form-group required">
+          <label>Email</label>
+          <input class="form-control" formControlName="Email" />
+          <label class="text-danger" *ngIf="this.appService.formModel.get('Email')?.touched && this.appService.formModel.get('Email')?.errors?.required">
+            This Feild is Mandatory
+          </label>
+          <label class="text-danger" *ngIf="this.appService.formModel.get('Email')?.touched && this.appService.formModel.get('Email')?.errors?.email">
+            Please Enter A valid Email Address
+          </label>
+        </div>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input class="form-control" formControlName="FullName" />
+        </div>
+        <div formGroupName="Passwords">
+          <div class="form-group required">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="Password" />
+            <label class="text-danger" *ngIf="this.appService.formModel.get('Passwords.Password')?.touched && this.appService.formModel.get('Passwords.Password')?.errors?.required">
+              This Feild is Mandatory
+            </label>
+            <label class="text-danger" *ngIf="this.appService.formModel.get('Passwords.Password')?.touched && this.appService.formModel.get('Passwords.Password')?.errors?.minlength">
+              Passwords Must Be Greater Than Four Characters
+            </label>
+          </div>
+          <div class="form-group required">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" formControlName="ConfirmPassword" />
+            <label class="text-danger" *ngIf="this.appService.formModel.get('Passwords.ConfirmPassword')?.touched && this.appService.formModel.get('Passwords.ConfirmPassword')?.errors?.required">
+              This Feild is Mandatory
+            </label>
+            <label class="text-danger" *ngIf="this.appService.formModel.get('Passwords.ConfirmPassword')?.touched && this.appService.formModel.get('Passwords.ConfirmPassword')?.errors?.passwordMismatch">
+              Passwords Do Not Match
+            </label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-8 offset-md-2">
+            <button type="submit" class="btn btn-lg btn-block" [disabled]="!this.appService.formModel.valid">Register</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

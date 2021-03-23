@@ -1,0 +1,36 @@
+<div class="content" role="main">
+  <!-- Title -->
+  <div class="index-title-container">
+    <h1 class="display-1 index-title" style="letter-spacing:10px;">CoV-Risk</h1>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="subheading">
+      Please click on one of the links below to get started
+    </div>
+  </div>
+  <!-- Nav Bar -->
+  <div class="card-container">
+    <div class="card" (click)="HRA_Card_nav();">
+      <fa-icon class="nav-icon" [icon]="appService.faUserMd" size="2x"></fa-icon>
+      <span>High Risk Analysis</span>
+    </div>
+
+    <div class="card" (click)="Results_Card_nav();">
+      <fa-icon class="nav-icon" [icon]="appService.faChartPie" size="2x"></fa-icon>
+      <span>Results</span>
+    </div>
+
+    <div class="card" (click) ="About_Card_nav();">
+      <fa-icon class="nav-icon" [icon]="appService.faTerminal" size="2x"></fa-icon>
+      <span>About</span>
+    </div>
+
+    <div class="card" (click)="onLogout();" style="margin-right:0;">
+      <fa-icon class="nav-icon" [icon]="appService.faUser" size="2x"></fa-icon>
+      <span>Logout</span>
+    </div>
+
+  </div>
+  <!-- Covid Dashboard -->
+  <div class="elfsight-app-69d2097e-5451-4c56-81a6-93b87793bacd"></div>
+</div>
