@@ -3,6 +3,8 @@
 
 ![User-120221](https://user-images.githubusercontent.com/32711675/127788024-5e7cee4e-5fc9-4243-a0c1-ab06af00d897.PNG)
 
+# Test
+
 **Background**
 
 First described in 1966 Coronaviruses are single-stranded RNA viruses that infect both humans and animals. Specifically, the coronavirus SARS-COV-2 and the disease it causes, COVID-19, is believed to have originated in animals and then made a successful transition to humans in late 2019. Most cases of COVID-19 are minor with symptoms including fever, cough, and fatigue; however, some people are not so lucky with severe cases leading to multiple organ failure. With a ~4.2% mortality rate (Hu et al., 2020) over 100 million deaths have so far been recorded as a direct result of the disease (World Health Organization, 2020a).
