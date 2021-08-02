@@ -3,9 +3,7 @@
 
 ![User-120221](https://user-images.githubusercontent.com/32711675/127788024-5e7cee4e-5fc9-4243-a0c1-ab06af00d897.PNG)
 
-# Test
-
-**Background**
+## Background
 
 First described in 1966 Coronaviruses are single-stranded RNA viruses that infect both humans and animals. Specifically, the coronavirus SARS-COV-2 and the disease it causes, COVID-19, is believed to have originated in animals and then made a successful transition to humans in late 2019. Most cases of COVID-19 are minor with symptoms including fever, cough, and fatigue; however, some people are not so lucky with severe cases leading to multiple organ failure. With a ~4.2% mortality rate (Hu et al., 2020) over 100 million deaths have so far been recorded as a direct result of the disease (World Health Organization, 2020a).
 
@@ -13,7 +11,7 @@ The only realistic path out of the instability the virus has caused is by trigge
 
 This is where ‘CoV-Risk’, the application built for this project, comes into-effect. The aim of CoV-Risk (and the project in general) is to efficiently flag and notify individuals who should be prioritized for a COVID-19 vaccination and present the data in a clear, logical manner. It does this by analysing patients on a more individual basis. Instead of simply stating that patients over 80 get the vaccination first, CoV-Risk utilises a custom points-based algorithm to examine the patients’ pre-existing conditions, sex, and age to give them a risk score. The higher the risk score, the higher the patient’s priority. This custom-built algorithm is accessed by medical professionals using a fully secure, interactive, website application. 
 
-**Objectives**
+## Objectives
 
 To complete the aim of the project, objectives were created to help guide the development. These objectives lay out clear markers for the projects programming with the development conducted using R, Angular, ASP.NET Core and SQL.
 
@@ -26,8 +24,10 @@ To complete the aim of the project, objectives were created to help guide the de
 7.	Create an email system to notify users who have been marked as a vaccine priority
 8.	Ensure the results from the algorithm are presented understandably on the website using graphs, tables, and charts
 
-**Algorithm Development**
+## Algorithm Development
 
-**Application Development**
+## Application Development
 
-**Applicstion Screenshots**
+## Application Demonstration
+
+60 Second Demonstration Video - https://youtu.be/k8zp8ZnAE38 
