@@ -3,11 +3,13 @@
 
 ![User-120221](https://user-images.githubusercontent.com/32711675/127788024-5e7cee4e-5fc9-4243-a0c1-ab06af00d897.PNG)
 
+The following provides a brief overview of the project, for an in-depth description and evaluation of the project view the 'Report.pdf' file
+
 ## Aim and Objectives
 
 The aim of CoV-Risk was to efficiently flag and notify individuals who should be prioritized for a COVID-19 vaccination and present the data in a clear, logical manner. It does this by analysing patients on a more individual basis. Instead of simply stating that patients over a certain age get the vaccination first, CoV-Risk utilises a custom points-based algorithm to examine the patients’ pre-existing conditions, sex, and age to give them a risk score. The higher the risk score, the higher the patient’s priority. This custom-built algorithm is then accessed by medical professionals using a fully secure, interactive, website application. 
 
-To complete the aim of the project, objectives were created to help guide the development. These objectives lay out clear markers for the projects programming with the development conducted using R, Angular, ASP.NET Core and SQL.
+To complete the aim of the project, objectives were created to help guide the development. These objectives lay out clear markers for the projects programming with the development conducted using **R, Angular, ASP.NET Core and SQL.**
 
 1.	Compile an extensive list of the factors that lead to series illness with COVID-19 
 2.	Assign point values (weights) to the factors based on how influential they are to causing a severe case of COVID-19 and calculate a 'high-risk threshold' value 
@@ -58,9 +60,15 @@ The threshold value for this algorithm is 50, if a patient scores over this numb
 
 ## Application Development
 
-The application itself was built as a ASP.NET Core project which utilised Angular for the front-end. The calculated point values were written up into a simple algorithm that the application accessed through an API. When a file was uploaded to the application it was sent to the API where the patient data was then extracted from it. Each of the patients pre-conditions were then compared to their corresponding point values to give the user a cumulative risk score. For example, if one of the uploaded patients was a male and over 50 they would be given a score of 80. The calculated scores for each patient were then uploaded to a SQL database before being passed back to the user for them to view. The results were displayed in a variety
+The application itself was built as a ASP.NET Core project which utilised Angular for the front-end. The calculated point values were written up into a simple algorithm that the application accessed through an API. When a file was uploaded to the application it was sent to the API where the patient data was then extracted from it. Each of the patients pre-conditions were then compared to their corresponding point values to give the user a cumulative risk score. For example, if one of the uploaded patients was a male and over 50 they would be given a score of 80. The calculated scores for each patient were then uploaded to a SQL database before being passed back to the user for them to view. The results were displayed on the site in both a tabular and graphical manner.
+
+![Results](https://user-images.githubusercontent.com/32711675/128013730-4299447c-347d-45da-a84e-69a74819e8d6.PNG)
+
+The application also allows patient data to be manipulated with both edit and delete functionality. As well as this, there are many additional quality of life features that help to provide a good user experience on the site; Loading spinners are presented when API requests are sent, toaster notifications display the outcome of requests and there are a number of show/hide toggles that permit the user to chose how much information they view at a time.
 
 The final website was secured with Angular authentication guard's and API requests were restricted through the use of Jason Web Tokens. Combined this means only registered users can view patient data and all requests to the API must come from autheticated users. The site was also fully responsive, working on a wide range of device sizes.
+
+For screenshots of the completed application navigate to the 'Application Screenshots' folder.
 
 ## Application Demonstration
 
