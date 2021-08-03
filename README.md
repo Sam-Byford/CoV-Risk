@@ -3,7 +3,7 @@
 
 ![User-120221](https://user-images.githubusercontent.com/32711675/127788024-5e7cee4e-5fc9-4243-a0c1-ab06af00d897.PNG)
 
-The following provides a brief overview of the project, for an in-depth description and evaluation of the project view the 'Report.pdf' file
+The following provides a brief overview of the project, for an in-depth description and evaluation of the project view the **'Report.pdf'** file
 
 ## Aim and Objectives
 
