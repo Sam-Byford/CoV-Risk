@@ -3,20 +3,14 @@
 
 ![User-120221](https://user-images.githubusercontent.com/32711675/127788024-5e7cee4e-5fc9-4243-a0c1-ab06af00d897.PNG)
 
-## Background
+## Aim and Objectives
 
-First described in 1966 Coronaviruses are single-stranded RNA viruses that infect both humans and animals. Specifically, the coronavirus SARS-COV-2 and the disease it causes, COVID-19, is believed to have originated in animals and then made a successful transition to humans in late 2019. Most cases of COVID-19 are minor with symptoms including fever, cough, and fatigue; however, some people are not so lucky with severe cases leading to multiple organ failure. With a ~4.2% mortality rate (Hu et al., 2020) over 100 million deaths have so far been recorded as a direct result of the disease (World Health Organization, 2020a).
-
-The only realistic path out of the instability the virus has caused is by triggering herd-immunity through vaccination. The first and most promising vaccinations to be introduced globally were the Pfizer-BioNTech and Oxford-AstraZeneca vaccinations. They have great efficacies of 95% (Olliaro, 2021) and 63.09% (World Health Organization, 2021) respectively. However, with these vaccines being developed, a major logistical problem now arises. What is the best way to ensure a fair and accurate distribution of doses to the worlds ~ 7 billion population? Due to risk increasing exponentially as you get older (GOV.UK, 2021), many governments, including in the UK, quickly created priority groups based almost entirely on age. This does ensure a quick rollout of the vaccine; however, it is not entirely fair as it does not necessarily guarantee the most high-risk individuals are protected first. Younger patients with pre-existing conditions that are badly affected by COVID-19 are vaccinated after healthier elderly patients. 
-
-This is where ‘CoV-Risk’, the application built for this project, comes into-effect. The aim of CoV-Risk (and the project in general) is to efficiently flag and notify individuals who should be prioritized for a COVID-19 vaccination and present the data in a clear, logical manner. It does this by analysing patients on a more individual basis. Instead of simply stating that patients over 80 get the vaccination first, CoV-Risk utilises a custom points-based algorithm to examine the patients’ pre-existing conditions, sex, and age to give them a risk score. The higher the risk score, the higher the patient’s priority. This custom-built algorithm is accessed by medical professionals using a fully secure, interactive, website application. 
-
-## Objectives
+The aim of CoV-Risk was to efficiently flag and notify individuals who should be prioritized for a COVID-19 vaccination and present the data in a clear, logical manner. It does this by analysing patients on a more individual basis. Instead of simply stating that patients over a certain age get the vaccination first, CoV-Risk utilises a custom points-based algorithm to examine the patients’ pre-existing conditions, sex, and age to give them a risk score. The higher the risk score, the higher the patient’s priority. This custom-built algorithm is then accessed by medical professionals using a fully secure, interactive, website application. 
 
 To complete the aim of the project, objectives were created to help guide the development. These objectives lay out clear markers for the projects programming with the development conducted using R, Angular, ASP.NET Core and SQL.
 
 1.	Compile an extensive list of the factors that lead to series illness with COVID-19 
-2.	Assign point values (weights) to the factors based on how influential they are to causing a bad case of COVID-19 and calculate a 'high-risk threshold' value 
+2.	Assign point values (weights) to the factors based on how influential they are to causing a severe case of COVID-19 and calculate a 'high-risk threshold' value 
 3.	Develop the points-based algorithm that analyses supplied data and uses the weighted factors to mark patients that are high risk 
 4.	Design and develop a secure and intuitive website that will provide a user interface for accessing and displaying the algorithm 
 5.	Build a database to house the results of the algorithm 
@@ -26,7 +20,47 @@ To complete the aim of the project, objectives were created to help guide the de
 
 ## Algorithm Development
 
+### Dataset
+For this project a dataset supplied by the Mexican Government was found that proved to be a perfect fit for the algorithm’s requirements. The dataset was download and accessed from a Kaggle project, seen below, and contained around 500,000 anonymised COVID-19 medical records from Mexico. It had details regarding individual patients medical backgrounds as well as if a patient had developed severe COVID-19 (defined as any patient that died or was placed into ICU).
+
+Dataset Link - https://www.kaggle.com/tanmoyx/covid19-patient-precondition-dataset 
+
+### Prediction Model
+To asign the correct point values to each of the obtained risk factors (patient pre-conditions), analysis had to be carried out on the dataset to see which factors were significant in predicting if a paitient developed severe COVID-19 . This analysis was performed using the statistics based language R
+
+The dataset was cleaned and a prediction model was created using LASSO regression.
+
+The 'glmnet' library was used to create the LASSO model and from this model the coefficient values of each factor was extracted. The odds ratio (OR) was calculated by getting the exponent of these values. The formula below placed the odds ratios into a percentage which made them easier to interrupt:
+    
+`Percent Change in the Odds = (Odds Ratio-1)×100
+`    
+
+For example, the odds of having severe COVID with pneumonia (1) over the odds of getting severe COVID without pneumonia (0) is exp(2.37756627) = 10.77864. The percentage change in the odds is (10.77864 – 1) x 100 = 977.863867. From this we can say that the odds for pneumonia patients getting severe COVID are ~978% higher than the odds for non-pneumonia patients. 
+
+### Points System
+The final stage of the algorithm development was converting the OR into a simplistic points system. The points system and the reasoning behind each factor’s value can be seen below. Any factor not in the table had a coefficient (and therefore OR) value of 0, meaning it was not a significant factor in predicting severe COVID-19.
+The threshold value for this algorithm is 50, if a patient scores over this number they are classed as high-risk. This value was selected to ensure that the most serious conditions will automatically get flagged. Inversley, it makes sure that less serious conditions do not get flagged as high-risk on their own and have to be combined with other conditions to push them over the threshold.
+
+
+
+| Feature          | Odds Ratio to 1 d.p  | Point Value  | Reasoning  |
+| ---------------- | -------------------- | ------------ | -----------|
+| Pneumonia        | 977.9                | 100          | Having this condition means you are 977% more likely to get severe-COVID-19. Therefore, it deserves the top marks      |
+| Renal_chronic    | 97                   | 75           | This condition is second in the severity ranking and needs to be treated as such with a high score      |
+| Diabetes         | 33.9                 | 50           | The last of the big three with it having a 33% odds ratio. Having this condition just about means you are at high risk from severe covid       |
+| Male             | 27.9                 | 40           | Just under the high-risk threshold being a male makes you 27% more likely to get severe_covid but is not enough to get a vaccination outright       |
+| Age >= 50        | 27.1                 | 40           | As above, being over 50 makes you 27% more likely to get severe covid       |
+| Hypertension     | 16.0                 | 30           | Having hypertension puts you at 16% more likely to get severe covid      |
+| Obesity          | 15.5                 | 30           | Much like hypertension, obesity puts you at ~16% more likely to get severe COVID       |
+| Immunosuppressed | 12.4                 | 25           | Slightly less than obesity as this only puts you at 12% more likely to get severe COVID      |
+| COPD             | 4.5                  | 25           | The least severe condition of all those analysed having COPD only puts you at a 4.5% greater chance of getting severe covid       |
+
+
 ## Application Development
+
+The application itself was built as a ASP.NET Core project which utilised Angular for the front-end. The calculated point values were written up into a simple algorithm that the application accessed through an API. When a file was uploaded to the application it was sent to the API where the patient data was then extracted from it. Each of the patients pre-conditions were then compared to their corresponding point values to give the user a cumulative risk score. For example, if one of the uploaded patients was a male and over 50 they would be given a score of 80. The calculated scores for each patient were then uploaded to a SQL database before being passed back to the user for them to view. The results were displayed in a variety
+
+The final website was secured with Angular authentication guard's and API requests were restricted through the use of Jason Web Tokens. Combined this means only registered users can view patient data and all requests to the API must come from autheticated users. The site was also fully responsive, working on a wide range of device sizes.
 
 ## Application Demonstration
 
