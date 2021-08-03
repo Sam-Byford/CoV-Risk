@@ -64,9 +64,9 @@ The application itself was built as an ASP.NET Core project which utilised Angul
 
 ![Results](https://user-images.githubusercontent.com/32711675/128013730-4299447c-347d-45da-a84e-69a74819e8d6.PNG)
 
-The application also allows patient data to be manipulated with both edit and delete functionality. As well as this, there are many additional quality of life features that help to provide a good user experience on the site; Loading spinners are presented when API requests are sent, toaster notifications display the outcome of requests and there are a number of show/hide toggles that permit the user to chose how much information they view at a time.
+The application also allows patient data to be manipulated with both edit and delete functionality. As well as this, there are many additional quality of life features that help to provide a good user experience on the site; Loading spinners are presented when API requests are sent, toaster notifications display the outcome of requests and there are several show/hide toggles that permit the user to chose how much information they view at a time.
 
-The final website was secured with Angular authentication guard's and API requests were restricted through the use of Jason Web Tokens. Combined this means only registered users can view patient data and all requests to the API must come from autheticated users. The site was also fully responsive, working on a wide range of device sizes.
+The final website was secured with Angular authentication guard's and API requests were restricted through the use of Jason Web Tokens. Combined this means only registered users can view patient data and all requests to the API must come from authenticated users. The site was also fully responsive, working on a wide range of device sizes.
 
 For screenshots of the completed application navigate to the 'Application Screenshots' folder.
 
