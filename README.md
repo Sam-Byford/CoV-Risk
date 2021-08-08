@@ -5,6 +5,10 @@
 
 The following provides a brief overview of the project, for an in-depth description and evaluation of the project, view the **'Report.pdf'** file.
 
+## Application Demonstration
+
+60 Second Demonstration Video - https://youtu.be/k8zp8ZnAE38 
+
 ## Aim and Objectives
 
 CoV-Risk aimed to efficiently flag and notify individuals who should be prioritized for a COVID-19 vaccination and present the data in a clear, logical manner. It does this by analysing patients on a more individual basis. Instead of simply stating that patients over a certain age get the vaccination first, CoV-Risk utilises a custom points-based algorithm to examine the patients’ pre-existing conditions, sex, and age to give them a risk score. The higher the risk score, the higher the patient’s priority. This custom-built algorithm is then accessed by medical professionals using a fully secure, interactive, website application. 
@@ -69,7 +73,3 @@ The application also allows patient data to be manipulated with both edit and de
 The final website was secured with Angular authentication guard's and API requests were restricted through the use of Jason Web Tokens. Combined this means only registered users can view patient data and all requests to the API must come from authenticated users. The site was also fully responsive, working on a wide range of device sizes.
 
 For screenshots of the completed application navigate to the 'Application Screenshots' folder.
-
-## Application Demonstration
-
-60 Second Demonstration Video - https://youtu.be/k8zp8ZnAE38 
