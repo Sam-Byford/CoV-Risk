@@ -30,7 +30,7 @@ Dataset Link - https://www.kaggle.com/tanmoyx/covid19-patient-precondition-datas
 ### Prediction Model
 To assign the correct point values to each of the obtained risk factors (patient pre-conditions), analysis had to be carried out on the dataset to see which factors were significant in predicting if a patient developed severe COVID-19. This analysis was performed using the statistics based language R.
 
-The dataset was cleaned and a prediction model was created using LASSO regression. T accuracy of the model was calculated at ~87%, more than adequate for a project of this scope. 
+The dataset was cleaned and a prediction model was created using LASSO regression. The accuracy of the model was calculated at ~87%, more than adequate for a project of this scope. 
 
 The 'glmnet' library was used to create the LASSO model and from this the coefficient values of each factor were extracted. The odds ratio (OR) was calculated by getting the exponent of these values. The formula below placed the odds ratios into a percentage which made them easier to interrupt:
     
