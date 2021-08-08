@@ -72,4 +72,6 @@ The application also allows patient data to be manipulated with both edit and de
 
 The final website was secured with Angular authentication guard's and API requests were restricted through the use of Jason Web Tokens. Combined this means only registered users can view patient data and all requests to the API must come from authenticated users. The site was also fully responsive, working on a wide range of device sizes.
 
+Hosting the application was handled through Azure App Service which provided quick and simple deployment
+
 For screenshots of the completed application navigate to the 'Application Screenshots' folder.
