@@ -45,7 +45,7 @@ For example, the odds of having severe COVID with pneumonia (1) over the odds of
 
 ### Points System
 The final stage of the algorithm development was converting the OR into a simplistic points system. The points system and the reasoning behind each factor’s value can be seen below. Any factor not in the table had a coefficient (and therefore OR) value of 0, meaning it was not a significant factor in predicting severe COVID-19.
-The threshold value for this algorithm is 50, if a patient scores over this number they are classed as high-risk. This value was selected to ensure that the most serious conditions will automatically get flagged. Inversley, it makes sure that less serious conditions do not get flagged as high-risk on their own and have to be combined with other conditions to push them over the threshold.
+The threshold value for this algorithm is 50, if a patient scores over this number they are classed as high-risk. This value was selected to ensure that the most serious conditions will automatically get flagged. Inversely, it makes sure that less serious conditions do not get flagged as high-risk on their own and have to be combined with other conditions to push them over the threshold.
 
 
 
